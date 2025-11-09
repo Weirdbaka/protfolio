@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #252531;
+      background: #EAEAFC;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: #6F6F94;
+      color: #E5E4E2;
+      text-align: center;
+      padding: 2rem 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header h1 {
+      animation: fadeInDown 1.5s ease;
+    }
+
+    header p {
+      animation: fadeInUp 2s ease;
+    }
+
+    header img {
+      display: block;
+      margin: 1rem auto;
+      width: 150px;
+      border-radius: 100%;
+      animation: bounce 3s infinite;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    nav {
+      background: #3A3A45;
+      padding: 0.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav ul li {
+      margin: 0.5rem;
+    }
+
+    nav ul li a {
+      color: #B2BEB5;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover, nav ul li a.active {
+      background: #6666FA;
+      color: white;
+      border-radius: 5px;
+    }
+
+    section {
+      padding: 3rem 1rem;
+      background: #B8B8CA;
+      margin: 2rem auto;
+      max-width: 1000px;
+      border-radius: 10px;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease;
+    }
+
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .project-card {
+      background:  #8195A1;
+      padding: 2rem;
+      border-radius: 6px;
+      text-align: center;
+      color: white;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.4);
+    }
+
+    .project-card img {
+      width: 100%;
+      border-radius: 6px;
+      margin-bottom: 0.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .project-card img:hover {
+      transform: scale(1.05);
+    }
+
+    .contact-info {
+      font-size: 1.1rem;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      margin-right: 15px;
+      text-decoration: none;
+      color: #4C5265;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a i {
+      margin-right: 8px;
+      font-size: 1.2rem;
+    }
+
+    .social-links a:hover {
+      color: #007acc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #333;
+      color: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Hi, I'm <span>Babitha Thomas</span></h1>
+    <p>Student | Learner | Future Developer</p>
+    <img src="https://i.postimg.cc/mDgdycFg/profile.png" alt="Profile Photo" />
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#about" class="active">About</a></li>
+      <li><a href="#qualification">Qualification</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm a passionate student currently pursuing Bachelors in Computer Applications, final year in SVR Institution.<br>
+       I am interested in web development, coding, and technology. I enjoy building creative and functional web experiences and am open to new skills and opportunities.</p>
+  </section>
+
+  <section id="qualification">
+    <h2>Qualification</h2>
+    <ul>
+      <li><strong>2023 - 2025:</strong> Bachelor in Computer Applications</li>
+      <li><strong>2021 - 2023:</strong> PUC - CEBA</li>
+    </ul>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card">
+        <img src="https://i.postimg.cc/cHGxKSKh/web-developer-portfolio.png" alt="Portfolio Project">
+        <h3>Portfolio Website</h3>
+        <p>A personal portfolio website to showcase my skills and work.</p>
+      </div>
+      <div class="project-card">
+        <img src="https://i.postimg.cc/02kNdPVH/todo-list.jpg" alt="To-Do App Project">
+        <h3>To-Do App</h3>
+        <p>A simple to-do list app using HTML, CSS, and JavaScript.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-info">
+      <p><strong>Email:</strong> babithathomas17@gmail.com <p><strong>Social Media:</strong></p>
+      <div class="social-links">
+        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://instagram.com/yourusername" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Babitha Thomas. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Scroll animation
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("nav ul li a");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 100;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove("active");
+        if (link.getAttribute("href").includes(current)) {
+          link.classList.add("active");
+        }
+      });
+
+      // Section animation on scroll
+      sections.forEach((sec) => {
+        const sectionTop = sec.getBoundingClientRect().top;
+        if (sectionTop < window.innerHeight - 100) {
+          sec.classList.add("show");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
